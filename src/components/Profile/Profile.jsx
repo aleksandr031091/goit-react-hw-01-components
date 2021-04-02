@@ -1,35 +1,53 @@
-const Pofile = ({
+import PropTypes from "prop-types";
+import scss from "./Profile.module.scss";
+
+const Profile = ({
   user: {
     avatar,
     name,
     tag,
     location,
-    stats: { Followers, Views, Likes },
+    stats: { followers, views, likes },
   },
 }) => (
-  <div className="profile">
-    <div className="description">
-      <img src={avatar} alt="Аватар пользователя" class="avatar" />
-      <p className="name">{name}</p>
-      <p className="tag">@{tag}</p>
-      <p className="location">{location}</p>
-    </div>
+  <section className={scss.sectionProfile}>
+    <div className={scss.profile}>
+      <div className={scss.description}>
+        <img src={avatar} alt="Аватар пользователя" className={scss.avatar} />
+        <h2 className={scss.Name}>{name}</h2>
+        <p className={scss.descriptionItem}>@{tag}</p>
+        <p className={scss.descriptionItem}>{location}</p>
+      </div>
 
-    <ul class="stats">
-      <li>
-        <span className="label">Followers</span>
-        <span className="quantity">{Followers}</span>
-      </li>
-      <li>
-        <span className="label">Views</span>
-        <span className="quantity">{Views}</span>
-      </li>
-      <li>
-        <span className="label">Likes</span>
-        <span className="quantity">{Likes}</span>
-      </li>
-    </ul>
-  </div>
+      <ul className={scss.stats}>
+        <li className={scss.statsItems}>
+          <span className={scss.statsDescription}>Followers</span>
+          <span className={scss.quantity}>{followers}</span>
+        </li>
+        <li className={scss.statsItems}>
+          <span className={scss.statsDescription}>Views</span>
+          <span className={scss.quantity}>{views}</span>
+        </li>
+        <li className={scss.statsItems}>
+          <span className={scss.statsDescription}>Likes</span>
+          <span className={scss.quantity}>{likes}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 );
 
-export default Pofile;
+export default Profile;
+
+Profile.propTypes = {
+  user: PropTypes.exact({
+    avatar: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: {
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }.isRequired,
+  }).isRequired,
+};
