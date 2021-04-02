@@ -13,7 +13,7 @@ const Profile = ({
   <section className={scss.sectionProfile}>
     <div className={scss.profile}>
       <div className={scss.description}>
-        <img src={avatar} alt="Аватар пользователя" className={scss.avatar} />
+        <img src={avatar} alt="avatar profile" className={scss.avatar} />
         <h2 className={scss.Name}>{name}</h2>
         <p className={scss.descriptionItem}>@{tag}</p>
         <p className={scss.descriptionItem}>{location}</p>

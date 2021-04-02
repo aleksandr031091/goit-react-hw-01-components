@@ -13,7 +13,7 @@ import tnansaction from "./data/transactions.json";
 const App = () => (
   <>
     <Profile user={user} />
-    <Statistics statistics={statistics} />
+    <Statistics title="Upload stats" statistics={statistics} />
     <FriendList friends={friends} />
     <TransactionHistory items={tnansaction} />
   </>

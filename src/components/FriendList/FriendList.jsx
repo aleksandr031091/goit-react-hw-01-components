@@ -1,4 +1,6 @@
 import FriendListItem from "./FriendListItem";
+import PropTypes from "prop-types";
+import scss from "./FriendList.scss";
 
 const FriendList = ({ friends }) => (
   <ul class="friend-list">
