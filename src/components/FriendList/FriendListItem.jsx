@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import scss from "./FriendListItem.scss";
+import scss from "./FriendListItem.module.scss";
 
 const FriendListItem = ({ avatar, name, isOnline }) => (
-  <li class="item">
-    <span class={isOnline} />
-    <img class={scss.avatar} src={avatar} alt="" width="48" />
-    <p class={scss.name}>{name}</p>
+  <li className={scss.item}>
+    <span className={isOnline ? scss.online : scss.offLine} />
+    <img className={scss.avatar} src={avatar} alt="" width="48" />
+    <p className={scss.name}>{name}</p>
   </li>
 );
 
