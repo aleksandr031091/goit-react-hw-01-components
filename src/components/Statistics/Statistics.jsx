@@ -3,7 +3,7 @@ import scss from "./Statistics.module.scss";
 
 const Statistics = ({ title = "", statistics }) => (
   <section className={scss.sectionStatistics}>
-    <h2 className={scss.title}>{title}</h2>
+    {title && <h2 className={scss.title}>{title}</h2>}
 
     <ul className={scss.statsList}>
       {statistics.map((item) => (
